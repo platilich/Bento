@@ -1,0 +1,34 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="icon" href="../static/img/icon.png">
+    <title>{{ page.name }}</title>
+</head>
+
+<body>
+    <main style='background-image: url("{{ page.photo }}")'>
+
+        <div class="m__header">
+            <h1 class="header__title">{{ page.name }}</h1>
+            <p class="header__paragraph">{{ page.description }}</p>
+        </div>
+        
+        <div class="m__main">
+            {% for button in buttons %}
+                <a class="main__a" href="{{ button.url }}" target="_blank">{{ button.title }}</a>
+            {% endfor %}
+        </div>
+
+
+        
+    </main>
+
+
+</body>
+
+
+</html>

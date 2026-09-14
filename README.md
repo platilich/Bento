@@ -6,23 +6,39 @@ Minimalist Link-in-Bio Template
 A clean, lightweight, single-page website to collect all your essential links in one stylish place.
 
 
-## Structure
+## Setup
+
 ```
-    - index.html — layout & content
-    - style.css — minimalist styling
-    - icon.png — profile photo 9:16
-```
-
-## Setup & Customization
-
-Open index.html in any text editor to update your name, bio, and image.
-Adding Links
-
-
-## To add new buttons, copy and paste this structure inside the HTML file:
-```
-<a class="main__a" href="YOUR_LINK" target="_blank">Platform Name</a>
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
 ```
 
+Create a `.env` file in the project root:
 
-To view the result, simply open index.html in your browser.
+```
+DJANGO_SECRET_KEY=your-secret-key
+```
+
+Then:
+
+```
+python manage.py migrate
+python manage.py createsuperuser
+python manage.py runserver
+```
+
+Open http://127.0.0.1:8000/
+
+
+## Customization
+
+Go to http://127.0.0.1:8000/admin/
+
+- **Page** — name, description, photo
+- **Buttons** — title and url for each link
+
+
+## License
+
+GNU GPL v3. See [LICENSE](LICENSE).

@@ -38,7 +38,6 @@ main {
     flex-direction: column;
 
 
-    background-image: url(image.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -75,12 +74,8 @@ main {
 
 
 .header__paragraph {
-    margin-top: 0px;
+    margin-top: 0;
 }
-
-
-
-
 
 
 
@@ -88,17 +83,26 @@ main {
 
 .m__main {
     display: flex;
-    
-    height: 10%;
+    flex-wrap: wrap;
 
+    justify-content: center;
+    align-content: flex-start;
+
+
+    width: 100%;
+    height: auto;
+
+
+    padding-bottom: 10px;
 
     margin-top: auto;
 
-    justify-content: center;
     align-items: center;
 
-    gap: 2%;
+    gap: 10px;
 
+
+    box-sizing: border-box;
 
 }
 
@@ -121,7 +125,6 @@ main {
     text-decoration: none;
     white-space: nowrap;
     font-size: 100%;
-
 
 
     padding: 2%;
