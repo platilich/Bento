@@ -1,8 +1,0 @@
-.gitignore
-db.sqlite3
-.venv
-.idea
-*.jpeg
-.env
-__pycache__/
-*.pyc
