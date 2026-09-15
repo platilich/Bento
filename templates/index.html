@@ -5,16 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/css/style.css">
-    <link rel="icon" href="../static/img/icon.png">
-    <title>{{ page.name }}</title>
+    {% if profile.custom_cursor %}
+        <link rel="stylesheet" href="../static/css/custom_cursor.css">
+
+    {% endif %}
+
+    {% if profile.icon %}
+        <link rel="icon" href="{{ page.icon }}">
+    {% else %}
+        <link rel="icon" href="../static/img/default_icon.png">
+    {% endif %}
+
+
+    <title>{{ profile.name }} - {{ profile.description }}</title>
 </head>
 
 <body>
-    <main style='background-image: url("{{ page.photo }}")'>
+    <div class="cursor-dot"></div>
+    <div class="cursor-circle"></div>
+
+    <main style='background-image: url("{{ profile.photo }}")'>
 
         <div class="m__header">
-            <h1 class="header__title">{{ page.name }}</h1>
-            <p class="header__paragraph">{{ page.description }}</p>
+            <h1 class="header__title">{{ profile.name }}</h1>
+            <p class="header__paragraph">{{ profile.description }}</p>
         </div>
         
         <div class="m__main">
@@ -28,7 +42,11 @@
     </main>
 
 
+
 </body>
+
+    <script src="../static/js/script.js"></script>
+
 
 
 </html>

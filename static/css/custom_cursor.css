@@ -1,0 +1,39 @@
+body, a, button {
+  cursor: none;
+}
+
+.cursor-dot, .cursor-circle {
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translate(-50%, -50%);
+}
+
+
+/* show after init */
+.cursor-dot.active, .cursor-circle.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.cursor-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #404040;
+}
+
+
+.cursor-circle {
+    width: 30px;
+    height: 30px;
+    border: 1.5px solid #989898;
+
+}

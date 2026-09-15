@@ -1,13 +1,13 @@
 from django.shortcuts import render
-from core.models import Page, Buttons
+from core.models import Profile, Buttons
 
 
 # Create your views here.
 def home(request):
-    page = Page.objects.first()
-    buttons = Buttons.objects.all()
+    profile = Profile.objects.exclude(hide=True).first()
+    buttons = Buttons.objects.exclude(hide=True)
 
 
-    data = {'page': page, 'buttons': buttons}
+    data = {'profile': profile,'buttons': buttons}
 
     return render(request, 'index.html', data)
